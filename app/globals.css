@@ -1,0 +1,198 @@
+@import url('https://api.fontshare.com/v2/css?f[]=creato-display@400,500,700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+/* @source "../../jobs-mf/app"; */
+@custom-variant dark (&:is(.dark *));
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@theme inline {
+  --font-creato: 'Creato Display', sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f7fbfa;
+  --foreground: #17383d;
+  --card: #ffffff;
+  --card-foreground: #17383d;
+  --popover: #ffffff;
+  --popover-foreground: #17383d;
+  --primary: #f2825c;
+  --primary-foreground: #fffafa;
+  --secondary: #fff0ea;
+  --secondary-foreground: #12383f;
+  --muted: #f7fbfa;
+  --muted-foreground: #58757a;
+  --accent: #fff0ea;
+  --accent-foreground: #12383f;
+  --destructive: #ed3336;
+  --border: #cfe3e0;
+  --input: #cfe3e0;
+  --ring: #f2825c;
+  --chart-1: #f2825c;
+  --chart-2: #184852;
+  --chart-3: #ed3336;
+  --chart-4: #ffd6c8;
+  --chart-5: #12383f;
+  --sidebar: #184852;
+  --sidebar-foreground: #fffafa;
+  --sidebar-primary: #f2825c;
+  --sidebar-primary-foreground: #fffafa;
+  --sidebar-accent: #f7fbfa;
+  --sidebar-accent-foreground: #12383f;
+  --sidebar-border: #f2825c;
+  --sidebar-ring: #ffffff;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Applies to all scrollable elements */
+::-webkit-scrollbar {
+  width: 4px;
+  /* vertical scrollbar width */
+  height: 4px;
+  /* horizontal scrollbar height */
+}
+
+/* The "track" (background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* The draggable "thumb" */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(24, 72, 82, 0.45);
+  border-radius: 10px;
+}
+
+/* Hover effect (optional) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(24, 72, 82, 0.7);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reduce overall cell size (this removes gaps too) */
+.custom-calendar {
+  --rdp-cell-size: 28px;
+  /* reduce this to make everything smaller */
+}
+
+/* Reduce button padding */
+.custom-calendar .rdp-day button {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: var(--rdp-cell-size) !important;
+  height: var(--rdp-cell-size) !important;
+  border-radius: 6px;
+}
+
+/* Optional: reduce font size */
+.custom-calendar .rdp-day {
+  font-size: 12px;
+}
+
+/* Remove default margins around days */
+.custom-calendar .rdp-day {
+  margin: 0 !important;
+}

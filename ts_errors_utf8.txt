@@ -1,0 +1,2 @@
+﻿app/mobile-payment/page.tsx(50,56): error TS1127: Invalid character.
+app/mobile-payment/page.tsx(198,1): error TS1160: Unterminated template literal.
