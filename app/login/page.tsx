@@ -10,6 +10,7 @@ import BU_Prepfree_logo from "@/public/UIT.webp";
 import Prepfree_logo from "@/public/images/Prepfree_logo.png";
 import Unlox_logo from "@/public/images/unlox_logo.svg";
 import HeroSlider from "@/components/HeroSlider";
+import UIT_Hero from "@/public/images/Login_Signup_Heros/UIT College.webp";
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -213,9 +214,7 @@ const Page = () => {
             Start yours with clarity, confidence, and the right tools.”
           </h1> */}
 
-            <div className="w-full h-full">
-              <HeroSlider />
-            </div>
+            <Image src={UIT_Hero} alt="" className="w-full h-full object-cover object-center" />
           </div>
         </div>
       </div>
